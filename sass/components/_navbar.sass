@@ -1,0 +1,32 @@
+@import ../variables
+@import ../mixins
+    
+.navbar
+
+    .nav-link
+        padding: 0 !important
+
+    &-toggler-icon
+        padding-top: 8px
+        color: white
+        font-size: $fs-desc
+
+    &__link
+        color: white
+        font-weight: $fw-nr
+
+        +mobile-landscape
+            margin: 12px 0
+            font-size: $fs-desc
+
+        +desktop-small-lanscape
+            margin: 0
+            margin-right: 24px
+            font-size: $fs-md
+
+        +desktop-small-lanscape
+            margin-right: 45px
+
+            &:hover
+                color: white
+                text-decoration: underline

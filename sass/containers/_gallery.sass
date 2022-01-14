@@ -1,0 +1,64 @@
+@import ../variables
+@import ../helpers
+@import ../mixins
+@import ../components/img
+
+.gallery
+    margin-top: 122px
+
+    .container
+        @extend .flex-column
+        align-items: center
+
+    &__title
+        line-height: 49px
+        font-weight: $fw-nr
+
+    &-container
+        @extend .flex-row
+        flex-wrap: wrap
+        justify-content: space-between
+
+    &-item
+        +img_modificator(4)
+
+    &__link
+        margin-top: 24px
+        color: black
+        font-size: $fs-sm-lg
+        font-weight: $fw-bd
+        line-height: 19px
+        text-decoration: underline
+
+    +mobile-landscape
+        &__title
+            font-size: $fs-desc
+
+        &-item
+            display: none
+
+            &_mobile
+                display: block
+                +img_modificator(2)
+
+        &__link
+            display: inline
+
+    +tablet-landscape
+        &__title
+            font-size: $fs-title-sm
+
+        &-item
+            display: block
+            +img_modificator(2)
+
+        &__link
+            display: none
+
+    +tablet-large-landscape
+        &-item
+            +img_modificator(3)
+
+    +desktop-small-lanscape
+        &-item
+            +img_modificator(4)

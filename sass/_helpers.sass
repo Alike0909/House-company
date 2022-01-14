@@ -1,0 +1,36 @@
+@import variables
+@import mixins
+    
+body
+    font-family: $font-primary
+    
+.container 
+    margin: 0 auto
+    padding: 0
+    width: 100%
+
+    +mobile-landscape
+        max-width: 310px
+
+    +tablet-landscape
+        max-width: 540px
+
+    +tablet-large-landscape
+        max-width: 720px
+
+    +desktop-small-lanscape
+        max-width: 900px
+
+    +desktop-landscape
+        max-width: 1024px
+
+    +desktop-large-landscape
+        max-width: 1240px
+
+.flex-column
+    display: flex
+    flex-direction: column
+
+.flex-row
+    display: flex
+    flex-direction: row

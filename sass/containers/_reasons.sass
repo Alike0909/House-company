@@ -1,0 +1,63 @@
+@import ../helpers
+@import ../variables
+@import ../mixins
+@import ../components/reason
+@import ../components/img
+    
+.reasons
+    margin-top: 100px
+
+    &__container
+        @extend .flex-row
+        justify-content: space-between
+        align-items: center
+
+    &__title
+        margin-bottom: 71px
+        font-weight: $fw-md
+
+    &__img
+        z-index: 1
+        height: 100%
+        max-height: 555px
+
+    &-desc
+        @extend .flex-column
+
+    +mobile-landscape
+        &__container
+            flex-direction: column !important
+
+        &__title
+            font-size: $fs-desc
+            line-height: 42px
+
+        &__img
+            display: none
+
+    +tablet-landscape
+        &__title
+            font-size: $fs-title-sm
+
+        &__img
+            display: block
+            max-height: 420px
+
+    +tablet-large-landscape
+        &-desc
+            max-width: 480px
+        
+    +desktop-small-lanscape
+        &__container
+            flex-direction: row !important
+
+    +desktop-landscape
+        &-desc
+            max-width: 600px
+
+        &__img
+            max-height: 450px
+
+    +desktop-large-landscape
+        &__img
+            max-height: 555px

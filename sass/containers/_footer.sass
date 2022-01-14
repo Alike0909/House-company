@@ -1,0 +1,154 @@
+@import ../variables
+@import ../helpers
+@import ../mixins
+
+.footer
+    margin-top: 128px
+    padding-top: 45px
+    padding-bottom: 160px
+    background: $color-blue
+
+    &__container
+        @extend .flex-column
+
+    &_fluid
+        justify-content: space-between
+        flex-wrap: wrap
+
+        .footer__link
+            margin: 0
+
+    &__title
+        margin-bottom: 24px
+        color: white
+        font-size: $footer-title
+        line-height: 32px
+        font-weight: $fw-md
+
+    &__link
+        margin-right: 40px
+        color: $color-gray
+        line-height: 19px
+        font-weight: $fw-nr
+        text-decoration: none
+        text-transform: capitalize
+
+        &_mobile
+            color: white
+            text-decoration: underline
+
+        +desktop-small-lanscape
+            &:hover
+                color: white
+
+    &__img
+        width: 100%
+        border-radius: 4px
+
+    &__text
+        color: $color-gray
+        font-size: $fs-sm
+        line-height: 13px
+        font-weight: $fw-nr
+
+
+    &-nav
+        @extend .flex-row
+        padding-bottom: 25px
+        align-items: center
+        flex-wrap: wrap
+
+    &-map
+        padding: 30px 0
+        border-top: 1px solid rgba(255, 255, 255, 0.16)
+        border-bottom: 1px solid rgba(255, 255, 255, 0.16)
+
+    &-item
+        margin-bottom: 30px
+
+        &__title
+            margin-bottom: 8px
+            color: #E6E5E5
+            font-size: $fs-md-lg
+            line-height: 24px
+            font-weight: $fw-nr
+
+    &-copyright
+        @extend .flex-row
+        padding-top: 36px
+        justify-content: space-between
+        align-items: center
+
+    &_btn
+        max-height: 48px
+        border: 1px solid transparent
+        border-radius: 4px
+        +desktop-small-lanscape
+            &:hover
+                border-color: $color-yellow
+
+    +mobile-landscape
+        &-item
+            display: flex
+            align-items: center
+
+        &__link
+            display: none
+
+        .footer__link_mobile
+            margin-left: 12px
+            margin-bottom: 6px
+            display: inline
+
+        &_fluid
+            flex-direction: column
+            align-items: flex-start
+
+    +tablet-landscape
+        &-item
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+            
+        &_fluid
+            flex-direction: row
+            justify-content: flex-start
+            align-items: center
+
+            .footer__link
+                margin-bottom: 12px
+                margin-right: 12px
+
+        &__link
+            display: inline
+            margin-bottom: 12px
+
+        .footer__link_mobile
+            display: none !important
+
+        &__text
+            margin-left: 16px
+
+        &-copyright
+            .footer__link
+                margin-left: 16px
+                margin-top: 12px
+        
+    +desktop-small-lanscape
+        &_fluid
+            justify-content: space-between
+
+            .footer__link
+                margin: 0
+
+        &__text
+            margin-left: 0px
+
+        &-copyright
+            .footer__link
+                margin-top: 0px
+
+    +desktop-landscape
+        &__link
+            margin: 0
+            margin-right: 40px

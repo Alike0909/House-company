@@ -1,0 +1,51 @@
+@import ../helpers
+@import ../mixins
+@import ../components/card
+    
+.cards
+    @extend .flex-column
+    margin-top: 74px
+    align-items: center
+    
+    &__container
+        @extend .flex-row
+        justify-content: space-between
+
+    &__item
+        width: calc(33.3333% - 9px)
+
+    &__link
+        margin-top: 24px
+        color: black
+        font-size: $fs-sm-lg
+        font-weight: $fw-bd
+        line-height: 19px
+        text-decoration: underline
+
+    +mobile-landscape
+        &__container
+            justify-content: center
+
+        &__item
+            display: none !important
+
+            &_mobile
+                display: flex !important
+                width: 100%
+
+        &__link
+            display: inline
+
+    +desktop-small-lanscape
+        &__container
+            justify-content: space-between
+
+        &__item
+            display: flex !important
+
+            &_mobile
+                display: flex !important
+                width: calc(33.3333% - 9px)
+
+        &__link
+            display: none

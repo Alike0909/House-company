@@ -1,0 +1,63 @@
+@import ../helpers
+@import ../variables
+@import ../mixins
+
+.reason
+    @extend .flex-row
+    margin-bottom: 41px
+    align-items: center
+
+    &__title
+        font-weight: $fw-nr
+
+    &__text
+        margin-top: 12px
+        font-weight: $fw-nr
+
+    +mobile-landscape
+        &__title
+            font-size: $fs-md-lg
+            line-height: 28px
+
+        &__text
+            font-size: $fs-md
+            line-height: 28px
+
+    +tablet-large-landscape
+        &__title
+            font-size: $fs-desc
+            line-height: 39px
+
+        &__text
+            font-size: $fs-md-lg
+            line-height: 28px
+
+    
+    @each $icon in promote, comment, chat
+        .ic_#{$icon}
+            margin-right: 28px
+            display: flex
+
+            &::after
+                content: " "
+                background: url(../uploads/ic_#{$icon}.svg) no-repeat center /cover
+
+            +mobile-landscape
+                &::after
+                    width: 60px
+                    height: 60px
+
+            +tablet-large-landscape
+                &::after
+                    width: 70px
+                    height: 70px
+
+            +desktop-small-lanscape
+                &::after
+                    width: 80px
+                    height: 80px
+
+            +desktop-large-landscape
+                &::after
+                    width: 90px
+                    height: 90px

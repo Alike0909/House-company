@@ -1,0 +1,22 @@
+.img-custom
+    position: relative
+
+    &::before
+        content: " "
+        position: absolute
+        z-index: -1
+        top: 0
+        bottom: 0
+        right: 21px
+        margin: auto
+        width: 112%
+        height: 77%
+        background: $color-yellow
+
+=img_modificator($amount)
+    $width: (100/$amount) + 0% 
+    margin-top: 21px
+    width: calc(#{$width} - 11px)
+    
+    &__img
+        width: 100%
